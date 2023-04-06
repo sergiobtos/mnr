@@ -1,10 +1,11 @@
+import ContestList from "./contest-list"
 import Header from "./header"
-import { useState } from "react"
 
-const App = () => {
+const App = ({initialData}) => {
     return (
     <div className="container">
         <Header message="Naming Contests" />
+        <ContestList initialContests={{initialData}} />
     </div>
     )
 }

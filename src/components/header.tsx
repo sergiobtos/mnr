@@ -1,6 +1,8 @@
+import React from 'react';
+
 const Header = (props) => {
     return (
-        <h1>{props.message}</h1>
+        <h2 className="text-center">{props.message}</h2>
     )
 }
 

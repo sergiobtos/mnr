@@ -14,6 +14,10 @@ body {
   margin: 1rem auto;
 }
 
+.container .text-center {
+  text-align: center;
+}
+
 .header {
   text-align: center;
   margin: 2rem;
@@ -101,3 +105,4 @@ form button {
   margin: 2rem auto;
   text-align: center;
 }
+
