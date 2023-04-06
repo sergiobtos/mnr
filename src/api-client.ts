@@ -7,3 +7,8 @@ export const fecthContests = async () => {
 
     return resp.data.contests;
 };
+
+export const fecthContest = async (contestId) => {
+    const resp = await axios.get(`${API_SERVER_URL}/contest/${contestId}`)
+    return resp.data.contest;
+};

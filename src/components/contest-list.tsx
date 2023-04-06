@@ -1,22 +1,29 @@
 import { useEffect, useState } from "react"
 import ContestPreview from "./contest-preview"
 import { fecthContests } from "../api-client"
+import Header from "./header"
 
-const ContestList = ({initialContests}) => {
-    const [contests, setContests] = useState([])
+const ContestList = ({initialContests, onContestClick}) => {
+    const [contests, setContests] = useState(initialContests ?? [])
 
     useEffect(()=>{
-        fecthContests().then((contests) => {
-            setContests(contests)
-        })
-    },[])
+        if(!initialContests){
+            fecthContests().then((contests) => {
+                setContests(contests)
+            })
+        }   
+    },[initialContests])
 
     return (
-        <div className="contest-list">
+        <>
+            <Header message="Naming Contests" />
+            <div className="contest-list">
             {contests.map((el: any) => {
-                return <ContestPreview key={el.id} contest={el} />
+                return <ContestPreview key={el.id} contest={el} onClick={onContestClick} />
             })}
         </div>
+        </>
+       
     )
 }
 

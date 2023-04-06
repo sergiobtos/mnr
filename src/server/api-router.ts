@@ -5,7 +5,6 @@ import { connectClient } from "./db";
 const router = express.Router();
 router.use(cors());
 
-
 router.get("/contests", async (req, res) => {
     const client = await connectClient();
     const contests = await client

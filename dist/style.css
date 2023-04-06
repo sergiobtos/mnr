@@ -46,6 +46,11 @@ body {
   padding: 0.5rem;
 }
 
+.contest-preview:hover {
+  cursor: pointer;
+  border-color:tomato;
+}
+
 .contest .title {
   border: thin solid #ccc;
   padding: 0.5rem;
